@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러 데이터 나열해 보여 주기</title>
+    <style>
+        .reg {
+				font-size:14px;
+				width:110px;
+				color:green;
+				font-weight:bold;		
+				float:left;
+				text-align:right;
+				margin-right:10px;
+			 }	 
+			 form ul li{
+				list-style:none; 
+				margin: 15px 0;	
+				font-size:14px;	
+			 }
+             fieldset {width: 450px;}
+    </style>
+</head>
+<body>
+    <form>
+        <h1>여름방학 특강 신청</h1>
+        <fieldset>
+            <legend>수강 신청인</legend>
+            <ul>
+                <li>
+                    <label class="reg" for="u-num">학번</label>
+                    <input type="number" id="u-num">
+                </li>
+                <li>
+                    <label class="reg" for="u-name">이름</label>
+                    <input type="text" id="u-name">
+                </li>
+                <li>
+                    <label class="reg" for="u-sub">학과</label>
+                    <select id="u-sub" size="5" multiple>
+                        <option value="archi">건축공학과</option>
+                        <option value="mechanic">기계공학과</option>
+                        <option value="indust">산업공학과</option>
+                        <option value="elec">전기전자공학과</option>
+                        <option value="computer">컴퓨터공학과</option>
+                        <option value="chemical">화학공학과</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+    <br>
+    <hr>
+    <form>
+        <h1>여름방학 특강 신청</h1>
+        <fieldset>
+            <legend>수강 신청인</legend>
+            <ul>
+                <li>
+                    <label class="reg" for="u-num">학번</label>
+                    <input type="number" id="u-num">
+                </li>
+                <li>
+                    <label class="reg" for="u-name">이름</label>
+                    <input type="text" id="u-name">
+                </li>
+                <li>
+                    <label class="reg" for="u-sub">학과</label>
+                    <select id="u-sub">
+                        <optgroup label="공과대학">
+                            <option value="archi">건축공학과</option>
+                            <option value="mechanic">기계공학과</option>
+                            <option value="indust">산업공학과</option>
+                            <option value="elec">전기전자공학과</option>
+                            <option value="computer" selected>컴퓨터공학과</option>
+                            <option value="chemical">화학공학과</option>
+                        </optgroup>
+                        <optgroup label="인문대학">
+                            <option value="history">사학과</option>
+                            <option value="lang">어문학부</option>
+                            <option value="philo">철학</option>
+                        </optgroup>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+    <br>
+    <hr>
+    <form>
+        <fieldset>
+            <legend>수강할 과목을 선택하세요</legend>
+            <ul>
+                <li>
+                    <label class="reg" for="interest">관심분야</label>
+                    <input type="text" id="interest" list="choices">
+                    <datalist id="choices">
+                        <option value="grammar" label="문법"></option>
+                        <option value="voca" label="어휘"></option>
+                        <option value="speaking" label="회화"></option>
+                        <option value="listening" label="리스닝"></option>
+                        <option value="news" label="뉴스청취"></option>
+                    </datalist>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+    <br>
+    <hr>
+    <form>
+        <fieldset>
+            <legend>좋은 글귀</legend>
+            <textarea name="intro"cols="60" rows="5">
+    근면으로 부자가 되었다고 말하는 이가 있다면 물어보아라.
+    누구의 근면이었는지.
+
+    when a man tells you that he got rich
+    through hard work, ask him: 'whose?'
+            </textarea>
+        </fieldset>
+    </form>
+    <br>
+</body>
+</html>
