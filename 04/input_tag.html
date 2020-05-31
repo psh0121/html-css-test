@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 입력을 위한 input 태그</title>
+    <style>
+         fieldset {
+            width: 460px;
+         }
+		 .a ul {
+			 list-style:none;
+		 }
+		 .a li {
+			 margin:10px;
+		 }
+		 .a li label {
+			 width:120px;
+			float:left;
+			text-align:right;
+			padding-right:8px;
+		 }
+         .b label {
+			font-size:14px; /* 글자 크기 */
+			line-height:25px;  /* 줄 간격 */
+		 }
+         form label.reg {
+			 font-size:14px;
+			 width:150px;
+			 float:left;
+		 }
+		 form ul li{
+			 list-style:none; 
+			 margin: 15px 0;		
+		}
+		#member, #stuffs {
+			 width:50px; 
+		}
+    </style>
+</head>
+<body>
+   <form class="b">
+        <h1>로그인</h1>
+       <fieldset>
+           <label>아이디: <input type="text" id="user_id" size="10"></label>
+           <label>비밀번호: <input type="password" id="user_pw" size="10"></label>
+           <input type="submit" value="로그인">
+       </fieldset>
+   </form>
+   <br>
+   <hr>
+   <form class="a">
+       <h1>회원 가입</h1>
+       <fieldset>
+           <legend>로그인 정보</legend>
+           <ul>
+               <li>
+                   <label for="user-name">이름</label>
+                   <input type="text" id="user-name">
+               </li>
+               <li>
+                    <label for="user-pw">비밀번호</label>
+                    <input type="password" id="user-pw">
+                </li>
+                <li>
+                    <label for="user-pws">비밀번호 확인</label>
+                    <input type="password" id="user-pws">
+                </li>
+           </ul>
+       </fieldset>
+       <fieldset>
+        <legend>개인 정보</legend>
+        <ul>
+            <li>
+                <label for="user-name">이름</label>
+                <input type="text" id="user-name">
+            </li>
+            <li>
+                 <label for="mail">메일주소</label>
+                 <input type="email" id="mail">
+             </li>
+             <li>
+                 <label for="hp">연락처</label>
+                 <input type="tel" id="hp">
+             </li>
+             <li>
+                <label for="homep">블로그/홈페이지</label>
+                <input type="url" id="homep">
+            </li>
+        </ul>
+    </fieldset>
+   </form>
+   <br>
+   <hr>
+   <form class="c">
+       <fieldset>
+           <legend>등록 정보</legend>
+           <ul>
+               <li>
+                   <label class="reg" for="member">참여인원<small>(최대10명)</small></label>
+                   <input type="number" id="member" value="1" min="0" max="10" step="1">
+               </li>
+               <li>
+                    <label class="reg" for="stuffs">지원물품<small>(1인당 5개)</small></label>
+                    <input type="number" id="stuffs" value="1" min="0" max="50" step="5">
+               </li>
+               <li>
+                    <label class="reg" for="satis">희망 단계<small>(하,중,상)</small></label>
+                    <input type="range" id="satis" value="1" min="1" max="3">
+               </li>
+           </ul>
+       </fieldset>
+   </form>
+   <br>
+   <hr>
+   <form class="d">
+       <fieldset>
+           <legend>신청 과목</legend>
+           <p>이 달에 신청할 과목을 선택하세요 (1과목만 가능)</p>
+           <label><input type="radio" name="subjcet" vlaue="speaking">회화</label>
+           <label><input type="radio" name="subjcet" vlaue="grammar">문법</label>
+           <label><input type="radio" name="subjcet" vlaue="writing">작문</label>
+       </fieldset>
+       <br>
+       <fieldset>
+        <legend>메일링</legend>
+        <p>메일로 받고 싶은 뉴스 주제를 선택해 주세요 (복수 선택 가능)</p>
+        <label><input type="checkbox" name="mailing1" vlaue="news">해외 단신</label>
+        <label><input type="checkbox" name="mailing2" vlaue="dialog">5분 회화</label>
+        <label><input type="checkbox" name="mailing3" vlaue="pops">모닝 팝스</label>
+    </fieldset>
+   </form>
+   <br>
+   <hr>
+   <form>
+        <fieldset>
+            <legend>과 티셔츠 설문</legend>
+            <p>올해 과 티(T)를 만들려고 합니다. 원하는 색상을 추천해 주세요.</p>
+            <label>선호색상<input type="color" value="#00ff00"></label>
+        </fieldset>
+   </form>
+   <br>
+   <hr>
+   <form>
+       <h3>조회기간 선택</h3>
+       <label><input type="date" id="start"></label>
+       <label><input type="date" id="end"></label>
+   </form>
+   <br>
+   <hr>
+   <form>
+       <h3>대관시간을 선택하세요(오늘)</h3>
+       <label>시작 시간 <input type="time" value="09:00" id="start1"></label>
+       <label>종료 시간 <input type="time" value="18:00" id="end1"></label>
+   </form>
+   <form>
+        <h3>대관시간을 선택하세요(다른날짜)</h3>
+        <label>시작 시간 <input type="datetime-local" value="2020-03-02T09:00" id="start2"></label>
+        <label>종료 시간 <input type="datetime-local" value="2020-03-02T18:00" id="end2"></label>
+    </form>
+    <br>
+    <hr>
+    <form action="register.php" method="POST">
+        <h3>메일링 리스트 등록</h3>
+        <label>메일주소 <input type="email"></label>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시입력">
+    </form>
+    <br>
+    <hr>
+    <form action="register.php" method="POST">
+        <label>아이디 <input type="text" size="15"></label>
+        <label>비밀번호 <input type="password" size="15"></label>
+        <input type="image" id="butt" src="images/login.jpg" width="50px"alt="login">
+    </form>
+    <br>
+    <hr>
+    <form>
+        <input type="button" value="새 탭 열기" onclick="window.open()">
+    </form>
+    <br>
+    <hr>
+    <form>
+        <label>첨부파일 : <input type="file"></label>
+    </form>
+    <br>
+</body>
+</html>
