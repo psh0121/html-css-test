@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 이미지 배치기준</title>
+    <style>
+        div {
+            width: 400px;
+            height: 200px;
+            padding: 25px;
+            background-image: url('images/dog.jpg');
+            background-size: 250px;
+            background-repeat: no-repeat;
+            border: gray 6px dotted;
+        }
+        .bo1 {background-origin: border-box;}
+        .bo2 {background-origin: padding-box;}
+        .bo3 {background-origin: content-box;}
+    </style>
+</head>
+<body>
+    <h2>border-box</h2>
+    <div class="bo1"></div>
+    <h2>padding-box</h2>
+    <div class="bo2"></div>
+    <h2>content-box</h2>
+    <div class="bo3"></div>
+</body>
+</html>
