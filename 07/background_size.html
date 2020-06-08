@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 이미지 크기 지정</title>
+    <style>
+        .bsauto {
+            width: 500px;
+            height: 300px;
+            background-image: url('images/dog.jpg');
+            background-size: auto;
+        }
+        .bscontain {
+            width: 500px;
+            height: 300px;
+            background-image: url('images/dog.jpg');
+            background-size: contain;
+        }
+        .bscover {
+            width: 500px;
+            height: 300px;
+            background-image: url('images/dog.jpg');
+            background-size: cover;
+        }
+        .bssize {
+            width: 500px;
+            height: 300px;
+            background-image: url('images/dog.jpg');
+            background-size: 300px;
+        }
+        .bspercentage {
+            width: 500px;
+            height: 300px;
+            background-image: url('images/dog.jpg');
+            background-size: 30%;
+        }
+    </style>
+</head>
+<body>
+    <h1>auto</h1>
+    <div class="bsauto"></div>
+    <h1>contain</h1>
+    <div class="bscontain"></div>
+    <h1>cover</h1>
+    <div class="bscover"></div>
+    <h1>크기값</h1>
+    <div class="bssize"></div>
+    <h1>백분율</h1>
+    <div class="bspercentage"></div>
+</body>
+</html>
