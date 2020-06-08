@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 이미지 위치</title>
+    <style>
+        div {
+            width: 400px;
+            height: 200px;
+            background-image: url('images/dog.jpg');
+            background-size: 250px;
+            background-repeat: no-repeat;
+            border: gray 1px solid;
+        }
+        .bp1 {background-position: left top;}
+        .bp2 {background-position: right bottom;}
+    </style>
+</head>
+<body>
+    <h2>왼쪽 위</h2>
+    <div class="bp1"></div>
+    <h2>오른쪽 아래</h2>
+    <div class="bp2"></div>
+</body>
+</html>
