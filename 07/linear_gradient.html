@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선형 그라데이션</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            border: black 2px solid;
+        }
+        .linear1 {
+            background: blue;
+            background: -webkit-linear-gradient(left top, blue, white); /*시작위치*/
+            background: -moz-linear-gradient(right bottom, blue, white);/*끝위치*/
+            background: -o-linear-gradient(right bottom, blue, white);
+            background: linear-gradient(to right bottom, blue, white);/*방향*/
+        }
+        .linear2 {
+            background: red;
+            background: -webkit-linear-gradient(45deg, red, white);
+            background: -moz-linear-gradient(45deg, red, white);
+            background: -o-linear-gradient(45deg, red, white);
+            background: linear-gradient(45deg, red, white);
+        }
+        .linear3 {
+            background: green;
+            background: -webkit-linear-gradient(top, green, white 30%, green);
+            background: -moz-linear-gradient(bottom, green, white 30%, green);
+            background: -o-linear-gradient(bottom, green, white 30%, green);
+            background: linear-gradient(to bottom, green, white 30%, green);
+            /*시작색상, 중간색상, 끝색상*/
+        }
+    </style>
+</head>
+<body>
+    <h2>색상 중지점 사용한 선형 그라데이션</h2>
+    <div class="linear3"></div>
+    <br>
+    <h2>각도를 사용한 선형 그라데이션</h2>
+    <div class="linear2"></div>
+    <br>
+    <h2>위치를 사용한 선형 그라데이션</h2>
+    <div class="linear1"></div>
+</body>
+</html>
