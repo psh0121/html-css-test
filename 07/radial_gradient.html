@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원형 그라데이션</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            border: black 2px solid;
+        }
+        .radial1 {
+            background: red;
+            background: -webkit-radial-gradient(circle, white, yellow, red);
+            background: -moz-radial-gradient(circle, white, yellow, red);
+            background: -o-radial-gradient(circle, white, yellow,red);
+            background: radial-gradient(circle, white, yellow, red);
+        }
+        .radial2 {
+            background: red;
+            background: -webkit-radial-gradient(ellipse, white, yellow, red);
+            background: -moz-radial-gradient(ellipse, white, yellow, red);
+            background: -o-radial-gradient(ellipse, white, yellow,red);
+            background: radial-gradient(ellipse, white, yellow, red);
+        }
+        .radial3 {
+            background: blue;
+            background: -webkit-radial-gradient(10% 10%, circle, white, blue);
+            background: -moz-radial-gradient(10% 10%, circle, white, blue);
+            background: -o-radial-gradient(10% 10%, circle, white, blue);
+            background: radial-gradient(circle at 10% 10%, white, blue);
+        }
+        .radial4 {
+            background: green;
+            background: -webkit-radial-gradient(30% 40%, circle closest-side, white, yellow, green);
+            background: -moz-radial-gradient(30% 40%, circle closest-side, white, yellow, green);
+            background: -o-radial-gradient(30% 40%, circle closest-side, white, yellow, green);
+            background: radial-gradient(circle closest-side at 30% 40%, white, yellow, green);
+        }
+        .radial5 {
+            background: green;
+            background: -webkit-radial-gradient(30% 40%, circle closest-corner, white, yellow, green);
+            background: -moz-radial-gradient(30% 40%, circle closest-corner, white, yellow, green);
+            background: -o-radial-gradient(30% 40%, circle closest-corner, white, yellow, green);
+            background: radial-gradient(circle closest-corner at 30% 40%, white, yellow, green);
+        }
+        .radial6 {
+            background: green;
+            background: -webkit-radial-gradient(30% 40%, circle farthest-side, white, yellow, green);
+            background: -moz-radial-gradient(30% 40%, circle farthest-side, white, yellow, green);
+            background: -o-radial-gradient(30% 40%, circle farthest-side, white, yellow, green);
+            background: radial-gradient(circle farthest-side at 30% 40%, white, yellow, green);
+        }
+        .radial7 {
+            background: green;
+            background: -webkit-radial-gradient(30% 40%, circle farthest-corner, white, yellow, green);
+            background: -moz-radial-gradient(30% 40%, circle farthest-corner, white, yellow, green);
+            background: -o-radial-gradient(30% 40%, circle farthest-corner, white, yellow, green);
+            background: radial-gradient(circle farthest-corner at 30% 40%, white, yellow, green);
+        }
+        .radial8 {
+            background: skyblue;
+            background: -webkit-radial-gradient(red, yellow, skyblue);
+            background: -moz-radial-gradient(red, yellow, skyblue);
+            background: -o-radial-gradient(red, yellow, skyblue);
+            background: radial-gradient(red, yellow, skyblue);
+        }
+        .radial9 {
+            background: skyblue;
+            background: -webkit-radial-gradient(red, yellow 20%, skyblue);
+            background: -moz-radial-gradient(red, yellow 20%, skyblue);
+            background: -o-radial-gradient(red, yellow 20%, skyblue);
+            background: radial-gradient(red, yellow 20%, skyblue);
+        }
+        .gd1 {
+            background: red;
+            background: -webkit-repeating-linear-gradient(yellow, red 20px);
+            background: -moz-repeating-linear-gradient(yellow, red 20px);
+            background: -o-repeating-linear-gradient(yellow, red 20px);
+            background: repeating-linear-gradient(yellow, red 20px);
+        }
+        .gd2 {
+            background: red;
+            background: -webkit-repeating-linear-gradient(yellow, yellow 20px, red 20px, red 40px);
+            background: -moz-repeating-linear-gradient(yellow, yellow 20px, red 20px, red 40px);
+            background: -o-repeating-linear-gradient(yellow, yellow 20px, red 20px, red 40px);
+            background: repeating-linear-gradient(yellow, yellow 20px, red 20px, red 40px);
+        }
+    </style>
+</head>
+<body>
+    <h2>그라데이션 반복</h2>
+    <div class="gd1"></div>
+    <br>
+    <div class="gd2"></div>
+    <br>
+    <h2>중지점을 이용한 원형 그라데이션</h2>
+    <ul>
+        <li style="list-style-type: none;">중지점 지정하지 않았을 경우</li>
+        <li style="list-style-type: none;"><div class="radial8"></div></li>
+        <li style="list-style-type: none;">중지점 지정했을 경우</li>
+        <li style="list-style-type: none;"><div class="radial9"></div></li>
+    </ul>
+    <br>
+    <h2>크기를 지정한 원형 그라데이션</h2>
+    <ul>
+        <li style="list-style-type: none;">closest-side</li>
+        <li style="list-style-type: none;"><div class="radial4"></div></li>
+        <li style="list-style-type: none;">closest-corner</li>
+        <li style="list-style-type: none;"><div class="radial5"></div></li>
+        <li style="list-style-type: none;">farthest-side</li>
+        <li style="list-style-type: none;"><div class="radial6"></div></li>
+        <li style="list-style-type: none;">farthest-corner</li>
+        <li style="list-style-type: none;"><div class="radial7"></div></li>
+    </ul>
+    <br>
+    <h2>위치키워드를 사용한 원형 그라데이션</h2>
+    <div class="radial3"></div>
+    <br>
+    <h2>원형 그라데이션 모양</h2>
+    <ul>
+        <li style="list-style-type: none;">circle</li>
+        <li style="list-style-type: none;"><div class="radial1"></div></li>
+        <li style="list-style-type: none;">ellipse</li>
+        <li style="list-style-type: none;"><div class="radial2"></div></li>
+    </ul>
+</body>
+</html>
