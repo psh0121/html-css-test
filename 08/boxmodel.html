@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS와 박스 모델</title>
+    <style>
+        .box1 {
+            margin: 10px;
+            width: 400px; /* 고정 너비 */
+            height: 100px;
+            background-color: red;
+        }
+        .box2 {
+            margin: 10px;
+            width: 50%; /* 가변 너비 - 브라우저 창 너비의 50% */
+            height: 100px;
+            background-color: blue;
+        }
+        #block img {
+            display: block;
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+        }
+        .l1 { 
+            display: inline; /* 인라인 배치 */
+            padding: 10px 15px;
+            margin-right: 10px;
+            border-top: solid pink 3px;
+            font-weight: bold;
+            line-height: 5em;
+            }
+        .n1 {
+            background-color: skyblue;
+            width: 630px;
+            height: 60px;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>블록레벨 속성 가지면서 인라인으로 배치</h2>
+    <nav> <!-- 다른 페이지로 연결하는 네이게이션 링크 -->
+        <ul class="n1">
+            <li><a href="#">페이지1 연결</a></li>
+            <li><a href="#">페이지2 연결</a></li>
+            <li><a href="#">페이지3 연결</a></li>
+            <li><a href="#">페이지4 연결</a></li>
+        </ul>
+        <h2>페이지1 연결</h2>
+    </nav>
+    <br>
+    <h1>인라인으로 배치하기</h1>
+    <nav> <!-- 다른 페이지로 연결하는 네이게이션 링크 -->
+        <ul>
+            <li class="l1"><a href="#">페이지1 연결</a></li>
+            <li class="l1"><a href="#">페이지2 연결</a></li>
+            <li class="l1"><a href="#">페이지3 연결</a></li>
+            <li class="l1"><a href="#">페이지4 연결</a></li>
+        </ul>
+    </nav>
+    <br>
+    <h2>인라인 배치 이미지를 블록 레벨로 배치하기</h2>
+    <ul>
+        <li id="inline">
+            <p>인라인 배치</p>
+            <img src="images/pic1.jpg">
+            <img src="images/pic2.jpg">
+            <img src="images/pic3.jpg">
+        </li>
+        <li id="block">
+            <p>블록 레벨 배치</p>
+            <img src="images/pic1.jpg">
+            <img src="images/pic2.jpg">
+            <img src="images/pic3.jpg">
+        </li>
+    </ul>
+    <br>
+    <h1>박스 모델의 너비와 높이 지정</h1>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <br>
+    <h1>인라인 레벨과 블록 레벨</h1>
+    <hr>
+    <h2>시간이란...</h2> <!-- 블록 레벨 태그 -->
+    <p>내일 죽을 것 처럼 오늘을 살고</p> <!-- 블록 레벨 태그 -->
+    <p>영원히 살 것처럼 <span style="color: red;">내일을 꿈꾸어라.</span></p> <!-- span은 인라인 태그 -->
+</body>
+</html>
