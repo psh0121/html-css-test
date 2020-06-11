@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여백을 조절하는 속성들</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: skyblue;
+        }
+        .margin1 { margin: 30px 50px 30px 50px;}
+        .margin2 { margin: 30px 50px;}
+        .margin3 { margin: 50px;}
+        .margin4 { margin: 30px 5px 10px;}
+        .head1 {
+            width: 500px;
+            height: 30px;
+            padding: 10px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .auto1 {
+            background-color: cornflowerblue;
+            width: 400px;
+            height: 600px;
+            margin:0 auto ; /* 중앙으로 배치 */
+        }
+        #over {
+            width: 200px;
+            height: 100px;
+            margin: 30px;
+            background-color: gray;
+        }
+        #nover {
+            width: 200px;
+            height: 100px;
+            margin: 30px;
+            display: inline-block;
+            background-color: gray;
+        }
+        .pd {
+            width: 200px;
+            height: auto;
+            background: hotpink;
+            display: inline-block;
+            margin: 15px;
+            color: white;
+        }
+        .pd1 {padding: 10px 30px 10px 30px;}
+        .pd2 {padding: 10px 30px;}
+        .pd3 {padding: 10px;}
+    </style>
+</head>
+<body>
+    <h2>다양하게 패딩 값 지정</h2>
+    <ul>
+        <li>
+            <p>패딩 : 10px 30px 10px 30px</p>
+            <div class="pd1 pd">패딩(padding)이란 콘텐츠 영역과 테두리 사이의 여백을 말한다.</div>
+        </li>
+        <li>
+            <p>패딩 : 10px 30px 10px 30px<br>(속성값 지정방법이 다름)</p>
+            <div class="pd2 pd">패딩(padding)이란 콘텐츠 영역과 테두리 사이의 여백을 말한다.</div>
+        </li>
+        <li>
+            <p>패딩 : 10px 10px 10px 10px</p>
+            <div class="pd3 pd">패딩(padding)이란 콘텐츠 영역과 테두리 사이의 여백을 말한다.</div>
+        </li>
+    </ul>
+    <br>
+    <h2>마진 중첩</h2>
+    <ul>
+        <li>
+            <p>세로배치 (마진 중첩 발생)</p>
+            <div id="over"></div>
+            <div id="over"></div>
+            <div id="over"></div>
+        </li>
+        <li>
+            <p>가로배치 (마진 중첩 발생하지 않음)</p>
+            <div id="nover"></div>
+            <div id="nover"></div>
+            <div id="nover"></div>
+        </li>
+    </ul>
+    <br>
+    <h2 class="head1">마진을 사용해 화면 가운데 배치하기</h2>
+    <div class="auto1"></div>
+    <br>
+    <h2>다양하게 마진값 지정</h2>
+    <ul>
+        <li>
+            <div class="margin1"></div>
+        </li>
+        <li>
+            <div class="margin2"></div>
+        </li>
+        <li>
+            <div class="margin3"></div>
+        </li>
+        <li>
+            <div class="margin4"></div>
+        </li>
+    </ul>
+</body>
+</html>
