@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 포지셔닝과 주요 속성들</title>
+    <style>
+        .boxsize1 {
+            box-sizing: content-box; /* 콘텐츠 영역 기준 */
+            width: 300px;
+            height: 150px;
+            margin: 10px;
+            padding: 30px;
+            border: 2px solid red;
+            display: inline-block;
+        }
+        .boxsize2 {
+            box-sizing: border-box; /* 테두리까지 박스 전체 기준 */
+            width: 300px;
+            height: 150px;
+            margin: 10px;
+            padding: 30px;
+            border: 2px solid red;
+            display: inline-block;
+        }
+        .float1 {
+            float: left; /* 이미지 왼쪽으로 배치 */
+            margin-right: 25px; /* 글과 이미지 사이의 간격 */
+        }
+        .float2 {
+            padding: 20px;
+            margin-right: 10px;
+            background-color: yellow;
+            float: left;
+        }
+        .float3 {
+            padding: 20px;
+            margin-right: 10px;
+            background-color: blue;
+            float: left;
+        }
+        .float4 {
+            padding: 20px;
+            margin-right: 10px;
+            background-color: green;
+            float: left;
+        }
+        .float5 {
+            padding: 20px;
+            margin-right: 10px;
+            background-color: white;
+            border: black 1px solid;
+            float: right;
+        }
+        .clear1 {
+            padding: 20px;
+            margin: 10px;
+            background-color: yellow;
+            float: left; /* 왼쪽으로 정렬 */
+        }
+        .clear2 {
+            padding: 20px;
+            margin: 10px;
+            background-color: blue;
+            float: left; /*왼쪽으로 정렬 */
+        }
+        .clear3 {
+            padding: 20px;
+            margin: 10px;
+            background-color: green;
+            /* float 지정없어 겹쳐서 표시 */
+        }
+        .clear4 {
+            padding: 20px;
+            margin: 10px;
+            background-color: violet;
+            clear: both; /* clear 속성 사용 */
+        }
+        .relative1 {
+            float: left;
+            width: 100px;
+            background-color: yellow;
+            margin-right: 10px;
+            padding: 20px
+        }
+        .relative2 {
+            position: relative; /* 좌표값 지정해 위치 선정 */
+            left: -50px;
+            top: 30px;
+            width: 300px;
+            background-color: blue;
+            float: left;
+            padding: 20px;
+        }
+        #position { /* 기준이 되는 부모 요소 */
+            position: relative; /* position이 relative */
+            width: 300px;
+            height: 300px;
+            border: 2px solid orange;
+        }
+        .absolute1 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: palevioletred;
+        }
+        #asl1 {left: 0; top: 0;} /* 왼쪽 위에 착 붙어있기 */
+        #asl2 {right: 0; top: 0;} /* 오른쪽 위에 착 붙어있기 */
+        #asl3 {left: 0; bottom: 0;} /* 왼쪽 바닥에 착 붙어있기 */
+        #asl4 {right: 0; bottom: 0;} /* 오른쪽 바닥에 착 붙어있기 */
+        #asl5 {top: 100px; right: 100px;} /* 위에서 100px 오른쪽에서 100px 간격두기 */
+        /* 중간에 위치해 줄려면 단위를 입력해야 하는 것 같음 */
+    #content { width: 400px;}
+    div p {line-height: 30px;}
+    #fixed {
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        width: 50px;
+        height: 50px;
+        background-color: orange;
+    }
+    img {
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid black;
+    }
+    .hidden1 { visibility: hidden;} /* pic2이미지 넣었지만 hidden됨. 하지만 크만큼 자리 차지 */
+    #zindex {
+        position: relative;
+        height: 100px;
+    }
+    .box {
+        width: 70px;
+        height: 70px;
+        border: black 2px solid;
+    }
+    #zindex1 {
+        position: absolute;
+        left: 0; top: 0;
+        background-color: red;
+        z-index: 1;
+    }
+    #zindex2 {
+        position: absolute;
+        left: 60px; top: 20px;
+        background-color: yellow;
+        z-index: 3;
+    }
+    #zindex3 {
+        position: absolute;
+        left: 30px; top: 30px;
+        background-color: blue;
+        z-index: 2;
+    }
+    </style>
+</head>
+<body>
+    <h2>z-index 속성</h2>
+    <div id="zindex">
+        <div class="box" id="zindex1">1</div>
+        <div class="box" id="zindex2">2</div>
+        <div class="box" id="zindex3">3</div>
+    </div>
+    <br>
+    <h2>visibility 속성</h2>
+    <img src="images/pic1.jpg">
+    <img src="images/pic2.jpg" class="hidden1">
+    <img src="images/pic3.jpg">
+    <br>
+    <h2>position : fixed 속성</h2>
+    <div id="fixed"></div>
+    <div id="content">
+        <p>
+            fixed 값을 사용하는 요소 역시 absolute 값을 사용하는 요소처럼 
+            문서 흐름과는 상관 없이 좌표로 위치를 결정하지만, 
+            기준이 되는 요소가 부모 요소가 아니라 브라우저 창이 기준이 됩니다. 
+            브라우저 창의 왼쪽 위 모서리 부분을 원점으로 좌표가 계산되고 
+            한번 배치되면 fixed라는 이름처럼 브라우저 창을 스크롤하더라도 
+            계속 고정되어 표시됩니다. 
+        </p>
+		<p>
+            fixed 값을 사용하는 요소 역시 absolute 값을 사용하는 요소처럼 
+            문서 흐름과는 상관 없이 좌표로 위치를 결정하지만, 
+            기준이 되는 요소가 부모 요소가 아니라 브라우저 창이 기준이 됩니다. 
+            브라우저 창의 왼쪽 위 모서리 부분을 원점으로 좌표가 계산되고
+            한번 배치되면 fixed라는 이름처럼 브라우저 창을 스크롤하더라도 
+            계속 고정되어 표시됩니다. 
+        </p>
+    </div>
+    <br>
+    <h2>position : absolute 속성</h2>
+    <div id="position">
+        <div class="absolute1" id="asl1"></div>
+        <div class="absolute1" id="asl2"></div>
+        <div class="absolute1" id="asl3"></div>
+        <div class="absolute1" id="asl4"></div>
+        <div class="absolute1" id="asl5"></div>
+    </div>
+    <br>
+    <h2>position : relative 속성</h2>
+    <div class="relative1">박스1</div>
+    <div class="relative2">박스2</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>clear 속성</h2>
+    <div class="clear1">박스1</div>
+    <div class="clear2">박스2</div>
+    <div class="clear3">박스3</div>
+    <div class="clear4">박스4</div>
+    <br>
+    <h2>여러 요소 가로로 배치하기</h2>
+    <div class="float2">박스1</div>
+    <div class="float3">박스2</div>
+    <div class="float4">박스3</div>
+    <div class="float5">박스4</div>
+    <br>
+    <br>
+    <br>
+    <h2>float 속성</h2>
+    <img src="images/cover.jpg" class="float1">
+    <h1>바쁜 3, 4학년을 위한 빠른 분수</h1>
+    <h2>3, 4학년이 꼭 알아야 할 분수를 한 권에 모았어요!</h2>
+    <p>한국 교육과정평가원이 최근 발표한 보고서에 따르면 <br>
+        '수포자는 초등 3학년 때 분수를 배우면서 시작된다고 합니다. <br>
+        분수를 어려워하는 이유는 분모와 분자, 2개의 수가 나와 낯설기 때문입니다. <br>
+        이렇게 낯설고 어려운 분수, 어떻게 공부해야 할까요?</p>
+    <br>
+    <h2>box-sizing 속성</h2>
+    <div class="boxsize1">box-sizing="contnet-box"</div>
+    <div class="boxsize2">box-sizing="border-box"</div>
+</body>
+</html>
