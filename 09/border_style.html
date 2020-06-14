@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 스타일</title>
+    <style>
+        .border1{ /* table 스타일*/
+            border: 1px solid black;
+        }
+        .border1 td{ /* table 안에 cell 하나하나 스타일 */
+            border: 1px dotted black;
+            padding: 10px;
+            text-align: center;
+        }
+        .bordercollapse{ 
+            border: 1px solid black;
+            border-collapse: collapse; /* 테두리 통합 */
+        }
+        .bordercollapse td{ 
+            border: 1px dashed black;
+            padding: 10px;
+            text-align: center;
+        }
+        .borderspacing1 {
+            border: black solid 1px;
+            border-collapse: separate;
+            border-spacing: 20px 10px;
+            display: inline-block;
+        }
+        .borderspacing1 td, .borderspacing2 td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .borderspacing2 {
+            border-collapse: separate;
+            border-spacing: 10px;
+            display: inline-block;
+        }
+        .emptycells1 {
+            border-collapse: separate;
+            display: inline-block;
+        }
+        .emptycells1 td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        #ec1 td { empty-cells: show;}
+        #ec2 td { empty-cells: hide;}
+        .heightwidth {
+            border-collapse: collapse;
+            width: 300px;
+            border: black 1px solid;
+        }
+        .heightwidth td {
+            padding: 10px;
+            border: solid black 1px;
+        }
+        .tablelayout1 {
+            border-collapse: collapse;
+            width: 300px;
+            border: black solid 1px;
+            table-layout: fixed; /* 셀 너비 고정 */
+        }
+        .tablelayout2 {
+            border-collapse: collapse;
+            width: 300px;
+            border: black solid 1px;
+            table-layout: fixed; /* 셀 너비 고정 */
+            height: auto; /* 셀의 줄 바꿈에 따라 높이 값 자동 조정 */
+            word-break: break-all; /* 셀 너비보다 긴 내용도 셀 안에 표시 */
+        }
+        .tablelayout1 td, .tablelayout2 td {
+            width: 150px;
+            border: black solid 1px;
+            padding: 5px;
+        }
+        .align { 
+            border: black 1px solid;
+            border-spacing: 20px;
+            background-color: lightgray;
+        }
+        .align td {
+            border: solid black 1px;
+            border-collapse: separate;
+            width: 100px;
+            height: 200px;
+            background-color: white;
+            text-align: center;
+        }
+        #align1 {vertical-align: top;}
+        #align2 {vertical-align: middle;}
+        #align3 {vertical-align: bottom;}
+    </style>
+</head>
+<body>
+    <h2>vertical-align 속성</h2>
+    <table class="align">
+        <caption>vertical-alignment</caption>
+        <tr>
+            <td id="align1">alignment</td>
+            <td id="align2">alignment</td>
+            <td id="align3">alignment</td>
+        </tr>
+    </table>
+    <br>
+    <h2>table-layout 속성</h2>
+    <table class="tablelayout1">
+        <caption>table-layout: fixed로 했을 경우</caption>
+        <tr>
+            <td>한글로띄어쓰기없이길게붙여쓰기</td>
+            <td>long_description_without_space</td>
+        </tr>
+    </table>
+    <br>
+    <table class="tablelayout2">
+        <caption>table-layout: fixed 후 표안에 내용 넣기</caption>
+        <tr>
+            <td>한글로띄어쓰기없이길게붙여쓰기</td>
+            <td>long_description_without_space</td>
+        </tr>
+    </table>
+    <br>
+    <h2>width, height 속성</h2>
+    <table class="heightwidth">
+        <caption>프로축구 경기 일정</caption>
+        <tr>
+            <td>울산</td>
+            <td>울산 vs 인천</td>
+        </tr>
+        <tr>
+            <td>부산</td>
+            <td>부산 vs 대전</td>
+        </tr>
+        <tr>
+            <td>서울</td>
+            <td>서울 vs 강원</td>
+        </tr>
+    </table>
+    <br>
+    <h2>empty-cells 속성</h2>
+    <table class="emptycells1" id="ec1">
+        <caption>프로축구 경기 일정</caption>
+        <tr>
+            <td>울산</td>
+            <td>울산 vs 인천</td>
+            <td>TV 중계</td>
+        </tr>
+        <tr>
+            <td>부산</td>
+            <td>부산 vs 대전</td>
+            <td></td> <!-- 빈 셀이라도 td를 해줘야 속성 나타남 -->
+        </tr>
+        <tr>
+            <td>서울</td>
+            <td>서울 vs 강원</td>
+            <td></td>
+        </tr>
+    </table>
+    <table class="emptycells1" id="ec2">
+        <caption>프로축구 경기 일정</caption>
+        <tr>
+            <td>울산</td>
+            <td>울산 vs 인천</td>
+            <td>TV 중계</td>
+        </tr>
+        <tr>
+            <td>부산</td>
+            <td>부산 vs 대전</td>
+        </tr>
+        <tr>
+            <td>서울</td>
+            <td>서울 vs 강원</td>
+        </tr>
+    </table>
+    <br>
+    <h2>border-spacing 속성</h2>
+    <table class="borderspacing1">
+        <caption>프로축구 경기 일정</caption>
+        <tr>
+            <td>울산</td>
+            <td>울산 vs 인천</td>
+        </tr>
+        <tr>
+            <td>부산</td>
+            <td>부산 vs 대전</td>
+        </tr>
+        <tr>
+            <td>서울</td>
+            <td>서울 vs 강원</td>
+        </tr>
+    </table>
+    <table class="borderspacing2">
+        <caption>프로축구 경기 일정</caption>
+        <tr>
+            <td>울산</td>
+            <td>울산 vs 인천</td>
+        </tr>
+        <tr>
+            <td>부산</td>
+            <td>부산 vs 대전</td>
+        </tr>
+        <tr>
+            <td>서울</td>
+            <td>서울 vs 강원</td>
+        </tr>
+    </table>
+    <br>
+    <h2>border-collapse 속성</h2>
+    <table class="bordercollapse">
+        <caption>프로축구 경기 일정</caption>
+        <tr>
+            <td>울산</td>
+            <td>울산 vs 인천</td>
+        </tr>
+        <tr>
+            <td>부산</td>
+            <td>부산 vs 대전</td>
+        </tr>
+        <tr>
+            <td>서울</td>
+            <td>서울 vs 강원</td>
+        </tr>
+    </table>
+    <br>
+    <h2>border 속성</h2>
+    <table class="border1">
+        <caption>프로축구 경기 일정</caption>
+        <tr>
+            <td>울산</td>
+            <td>울산 vs 인천</td>
+        </tr>
+        <tr>
+            <td>부산</td>
+            <td>부산 vs 대전</td>
+        </tr>
+        <tr>
+            <td>서울</td>
+            <td>서울 vs 강원</td>
+        </tr>
+    </table>
+</body>
+</html>
