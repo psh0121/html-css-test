@@ -1,0 +1,83 @@
+.container {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+}
+.navbg {
+    background-image: url(../images/nav_bg.png);
+    background-repeat: no-repeat;
+    position: relative;
+    height: 280px;
+    background-position: left top;
+}
+.navbg h1 {
+    position: absolute;
+    right: 10px; top: 70px;
+    color: white;
+    text-shadow: 2px 2px 2px black ;
+}
+.navbg h2 {
+    position: absolute;
+    right: 10px; top: 130px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+.nav1 {
+    width: 960px;
+    height: 60px;
+    background-color: steelblue;
+    position: relative;
+    margin-top: -16px;
+}
+.nav1 ul {
+    list-style: none;
+    height: 40px;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+.nav1 ul li {
+    display: inline;
+    font-size: 20px;
+}
+.nav1 a, .nav a:visited {
+    padding: 10px 5px 5px 90px;
+    display: inline-block;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    text-decoration: none;
+}
+.section1 {
+    background-color: rgba(255, 255, 224, 0.76);
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 20px;
+    width: 720px;
+    height: 950px;
+    float: left;
+}
+.section1 h2, .section1 h3 {
+    text-align: center;
+}
+.section1 p {font-size: 17px;}
+.section1 img {
+    padding: 18px;
+    width: 700px;
+    position: absolute;
+    top: 750px;
+}
+.aside1 {
+    padding-top: 5px;
+    text-align: center;
+}
+.aside1 img {
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 1300px;
+    width: 960px;
+}
