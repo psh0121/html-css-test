@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오디오 비디오 재생하기</title>
+</head>
+<body>
+    <h2>플레이어와 함께 오디오 삽입하기</h2>
+    <audio src="media/bgsound.mp3" controls></audio>
+    <br>
+    <h2>플에이어 표시 없이 배경 음악 삽입하기</h2>
+    <audio src="media/bgsound.mp3" autoplay loop></audio>
+    <br>
+    <h2>컨트롤 막대가 있는 비디오 삽입하기</h2>
+    <video src="media/Painting.mp4" width="500px" controls></video>
+    <br>
+    <h2>컨트롤 막대가 없는 비디오 삽입하기</h2>
+    <video src="media/Painting.mp4" width="500px"></video>
+    <br>
+    <h2>여러 형식의 비디오 파일 함께 삽입하기</h2>
+    <video width="500px" controls>
+        <source src="media/Painting.mp4" type="video/mp4">
+        <source src="media/Painting.webm" type="video/webm">
+    </video>
+    <br>
+    <h2>비디오 파일에 자막 파일 연결하기</h2>
+    <video width="500px" controls>
+        <source src="media/Painting.mp4" type="video/mp4">
+        <source src="media/Painting.webm" type="video/webm">
+        <track src="media/Painting.vtt" srclang="ko" label="korean" default>
+    </video>
+</body>
+</html>
