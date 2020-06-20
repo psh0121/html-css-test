@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 선택자</title>
+    <style>
+        .nav1 li{
+            display: inline-block;
+            list-style: none;
+            font-weight: bold;
+            padding: 15px;
+        }
+        .nav1 a {
+            color: blue;
+            padding: 15px;
+        }
+        .nav1 a:link, .nav1 a:visited { /* 링크와 방문한 링크 스타일 지정*/
+            text-decoration: none;
+        }
+        .nav1 a:hover, .nav1 a:focus { /* 링크에 마우스를 올려놓거나 초점 맞춰졌을때 스타일 지정*/
+            background-color: black;
+            color: white;
+        }
+        .nav1 a:active { /* 링크 클릭했을 때 스타일 지정 */
+            background-color: violet;
+            color: white;
+        }
+        fieldset { width: 450px;}
+        input:disabled { /* 이름칸이 disabled일때 스타일 지정 */
+            background: lightgray;
+        }
+        input:checked + span { /* 라디오박스 체크했을 때 스타일 지정 */
+            color: blue;
+        }
+        table {
+            border-collapse: collapse;
+            width: 150px;
+            text-align: center;
+        }
+        td {
+            border: 2px black solid;
+            padding: 10px;
+        }
+        table tr:nth-child(2n+1) { /* table 요소 안에서 홀수번째 tr 스타일 지정 */
+            background: lightsteelblue;
+        }
+        .lis {
+            border: 1px solid gray;
+            display: block;
+            float: left;
+            padding: 10px 30px;
+        }
+        .lis a {
+            text-decoration: none;
+            color: black;
+        }
+        .uls li:first-child { /* 첫번째 박스 테두리 라운드 스타일 지정 */
+            border-top-left-radius: 1em;
+            border-bottom-left-radius: 1em;
+        }
+        .uls li:last-child { /* 마지막 박스 테두리 라운드 스타일 지정 */
+            border-top-right-radius: 1em;
+            border-bottom-right-radius: 1em;
+        }
+        .li4 { line-height: 1.7em; }
+        .a4 { 
+            text-decoration: none;
+            color: black;
+        }
+        li.new::after { /* 클래스 적용 뒤에 스타일 적용*/
+            content: "NEW!!";
+            color: white;
+            background: red;
+            font-size: x-small;
+            padding: 2px 4px;
+            border-radius: 2px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>가상 요소를 사용해 내용 표시하기</h2>
+        <h3>제품 목록</h3>
+        <ul>
+            <li class="li4 new"><a class="a4" href="#">제품 A</a></li>
+            <li class="li4"><a class="a4" href="#">제품 B</a></li>
+            <li class="li4"><a class="a4" href="#">제품 C</a></li>
+            <li class="li4 new"><a class="a4" href="#">제품 D</a></li>
+        </ul>
+    </form>
+    <br>
+    <form>
+        <h2>목록의 첫번째와 마지막 항목에만 스타일 적용하기</h2>
+        <div>
+            <ul class="uls">
+                <li class="lis"><a href="#">Home</a></li>
+                <li class="lis"><a href="#">HTML5</a></li>
+                <li class="lis"><a href="#">CSS3</a></li>
+                <li class="lis"><a href="#">JQuery</a></li>
+            </ul>
+        </div>
+    </form>
+    <br>
+    <br>
+    <form>
+        <h2>표의 홀수 번째 열에만 배경 색 넣기</h2>
+        <h3>건강에 좋은 건강 식품</h3>
+        <table>
+            <tr><td>블루베리</td></tr>
+            <tr><td>귀리</td></tr>
+            <tr><td>토마토</td></tr>
+            <tr><td>시금치</td></tr>
+            <tr><td>적포도주</td></tr>
+            <tr><td>견과류</td></tr>
+            <tr><td>브로콜리</td></tr>
+            <tr><td>연어</td></tr>
+            <tr><td>마늘</td></tr>
+            <tr><td>녹차</td></tr>
+        </table>
+    </form>
+    <br>
+    <form>
+        <h2>라디오 버튼을 클릭했을 때 스타일 적용하기</h2>
+        <fieldset>
+            <legend><b>사용자 정보</b></legend>
+            <label>이름 <input type="text" disabled></label>
+        </fieldset>
+        <fieldset>
+            <legend><b>신청 과목</b></legend>
+            <p>이 달에 신청할 과목을 선택하세요</p>
+            <label>
+                <input type="radio" name="subject" value="speaking"><span>회화</span>
+            </label>
+            <label>
+                <input type="radio" name="subject" value="grammar"><span>문법</span>
+            </label>
+            <label>
+                <input type="radio" name="subject" value="writing"><span>작문</span>
+            </label>
+        </fieldset>
+    </form>
+    <br>
+    <form>
+        <h2>링크에서 가상 선택자 사용하기</h2>
+        <nav class="nav1">
+            <ul>
+                <li><a href="#">이용안내</a></li>
+                <li><a href="#">객실소개</a></li>
+                <li><a href="#">예약 방법 및 요금</a></li>
+                <li><a href="#">예약하기</a></li>
+            </ul>
+        </nav>
+    </form>
+</body>
+</html>
