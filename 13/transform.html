@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형</title>
+    <style>
+        .transx:hover { /* 마우스 오버시 오른쪽으로 50px 이동*/
+            -webkit-transform: translateX(50px);
+            -ms-transform: translate(50px);
+            -moz-transform: translate(50px);
+            -o-transform: translate(50px);
+            transform: translate(50px);
+        }
+        .transy:hover { /* 마우스 오버시 아래쪽으로 20px 이동 */
+            -webkit-transform: translateY(20px);
+            -ms-transform: translateY(20px);
+            -moz-transform: translateY(20px);
+            -o-transform: translateY(20px);
+            transform: translateY(20px);
+        }
+        .trans3d:hover { /* 마우스 오버시 오른쪽 10px, 아래쪽 20px, 앞쪽 10px 이동 */
+            -webkit-transform: translate3d(10px, 20px, 10px);
+            -ms-transform: translate3d(10px, 20px, 10px);
+            -moz-transform: translate3d(10px, 20px, 10px);
+            -o-transform: translate3d(10px, 20px, 10px);
+            transform: translate3d(10px, 20px, 10px);
+        }
+        .trans { /* 이동변화를 확인하기 위해 선 구분 */
+            border: 2px black solid;
+            width: 200px;
+            height: 134px;
+            margin: 10px 30px;
+            display: inline-block;
+        }
+        .scalex:hover { /* 마우스 오버시 가로로 1.2확대 */
+            -webkit-transform: scaleX(1.2);
+            -ms-transform: scaleX(1.2);
+            -moz-transform: scaleX(1.2);
+            -o-transform: scaleX(1.2);
+            transform: scaleX(1.2);
+        }
+        .scaley:hover { /* 마우스 오버시 세로로 1.5확대 */
+            -webkit-transform: scaleY(1.5);
+            -ms-transform: scaleY(1.5);
+            -moz-transform: scaleY(1.5);
+            -o-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+        }
+        .scale1:hover { /* 마우스 오버시 가로,세로 0.7확대 */
+            -webkit-transform: scale(0.7);
+            -ms-transform: scale(0.7);
+            -moz-transform: scale(0.7);
+            -o-transform: scale(0.7);
+            transform: scale(0.7);
+        }
+        .scale { /* 크기변화를 확인하기 위해 선 구분*/
+            border: 2px solid black;
+            width: 210px;
+            height: 200px;
+            margin: 10px 40px;
+            display: inline-block;
+        }
+        .rotate21:hover { /* 마우스 오버시 시계방향으로 20도 회전 */
+            -webkit-transform: rotate(20deg);
+            -ms-transform: rotate(20deg);
+            -moz-transform: rotate(20deg);
+            -o-transform: rotate(20deg);
+            transform: rotate(20deg);
+        }
+        .rotate22:hover { /* 마우스 오버시 반시계방향으로 40도 회전 */
+            -webkit-transform: rotate(-40deg);
+            -ms-transform: rotate(-40deg);
+            -moz-transform: rotate(-40deg);
+            -o-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+        }
+        .rotate2 { /* 회전을 확인하기 위해 선 구분 */
+            border: 2px black solid;
+            width: 210px;
+            height: 200px;
+            margin: 10px 30px;
+            display: inline-block;
+        }
+        .rotate31:hover { /* x축 기준 시계방향으로 45도 회전 */
+            -webkit-transform: rotateX(45deg);
+            -ms-transform: rotateX(45deg);
+            -moz-transform: rotateX(45deg);
+            -o-transform: rotateX(45deg);
+            transform: rotateX(45deg);
+        }
+        .rotate32:hover { /* y축 기준 시계방향으로 45도 회전 */
+            -webkit-transform: rotateY(45deg);
+            -ms-transform: rotateY(45deg);
+            -moz-transform: rotateY(45deg);
+            -o-transform: rotateY(45deg);
+            transform: rotateY(45deg);
+        }
+        .rotate33:hover { /* z축 기준 시계방향으로 45도 회전 */
+            -webkit-transform: rotateZ(45deg);
+            -ms-transform: rotateZ(45deg);
+            -moz-transform: rotateZ(45deg);
+            -o-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+        }
+        .rotate34:hover { /* x축 2.5, y축 1.2, z축 -1.5의 방향 벡터로 45도 회전 */
+            -webkit-transform: rotate3d(2.5, 1.2, -1.5, 45deg);
+            -ms-transform: rotate3d(2.5, 1.2, -1.5, 45deg);
+            -moz-transform: rotate3d(2.5, 1.2, -1.5, 45deg);
+            -o-transform: rotate3d(2.5, 1.2, -1.5, 45deg);
+            transform: rotate3d(2.5, 1.2, -1.5, 45deg);
+        }
+        .rotate3 { /* 회전을 확인하기 위해 선 구분 */
+            border: 2px black solid;
+            width: 210px;
+            height: 200px;
+            margin: 10px 40px;
+            display: inline-block;
+            perspective: 200px;
+        }
+        .skew1:hover { /* x축기준 30도 비틀기 */
+            -webkit-transform: skewX(30deg);
+            -ms-transform: skewX(30deg);
+            -moz-transform: skewX(30deg);
+            -o-transform: skewX(30deg);
+            transform: skewX(30deg);
+        }
+        .skew2:hover { /* y축기준 15도 비틀기 */
+            -webkit-transform: skewY(15deg);
+            -ms-transform: skewY(15deg);
+            -moz-transform: skewY(15deg);
+            -o-transform: skewY(15deg);
+            transform: skewY(15deg);
+        }
+        .skew3:hover { /* x축 -25도, y축 -15도 비틀기 */
+            -webkit-transform: skew(-25deg, -15deg);
+            -ms-transform: skew(-25deg, -15deg);
+            -moz-transform: skew(-25deg, -15deg);
+            -o-transform: skew(-25deg, -15deg);
+            transform: skew(-25deg, -15deg);
+        }
+        .skews { /* 왜곡정도를 확인하기 위해 선 구분 */
+            border: solid black 2px;
+            width: 160px;
+            height: 240px;
+            margin: 10px 70px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h3>x축과 y축으로 이미지 왜곡하기</h3>
+    <div class="skews">
+        <div class="skew1"><img src="images/rose.jpg"></div>
+    </div>
+    <div class="skews">
+        <div class="skew2"><img src="images/rose.jpg"></div>
+    </div>
+    <div class="skews">
+        <div class="skew3"><img src="images/rose.jpg"></div>
+    </div>
+    <br>
+    <h3>이미지 3차원 회전하기</h3>
+    <div class="rotate3">
+        <div class="rotate31"><img src="images/fruit.jpg"></div>
+    </div>
+    <div class="rotate3">
+        <div class="rotate32"><img src="images/fruit.jpg"></div>
+    </div>
+    <div class="rotate3">
+        <div class="rotate33"><img src="images/fruit.jpg"></div>
+    </div>
+    <div class="rotate3">
+        <div class="rotate34"><img src="images/fruit.jpg"></div>
+    </div>
+    <br>
+    <h3>이미지 2차원 회전하기</h3>
+    <div class="rotate2">
+        <div class="rotate21"><img src="images/fruit.jpg"></div>
+    </div>
+    <div class="rotate2">
+        <div class="rotate22"><img src="images/fruit.jpg"></div>
+    </div>
+    <br>
+    <h3>이미지 확대/축소하기</h3>
+    <div class="scale">
+        <div class="scalex"><img src="images/fruit.jpg"></div>
+    </div>
+    <div class="scale">
+        <div class="scaley"><img src="images/fruit.jpg"></div>
+    </div>
+    <div class="scale">
+        <div class="scale1"><img src="images/fruit.jpg"></div>
+    </div>
+    <br>
+    <h3>이미지 이동하기</h3>
+    <div class="trans">
+        <div class="transx"><img src="images/bus.jpg"></div>
+    </div>
+    <div class="trans">
+        <div class="transy"><img src="images/bus.jpg"></div>
+    </div>
+    <div class="trans">
+        <div class="trans3d"><img src="images/bus.jpg"></div>
+    </div>
+</body>
+</html>
