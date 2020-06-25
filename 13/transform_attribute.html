@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형과 관련된 속성들</title>
+    <style>
+        .origins { /* 변형기준점을 확인하기 위한 구분 기준선 */
+            border: black 2px solid;
+            width: 160px;
+            height: 240px;
+            margin: 20px 40px;
+            display: inline-block;
+        }
+        .rose { /* 사진이 z축을 기준으로 10도 기울게 설정 */
+            -webkit-transform: rotateZ(10deg);
+            -moz-transform: rotate(10deg);
+            -ms-transform: rotate(10deg);
+            -o-transform: rotate(10deg);
+            transform: rotate(10deg);
+        }
+        .origin1 .rose { /* 왼쪽 윗부분을 기준으로 변형 */
+            -webkit-transform-origin: left top;
+            -moz-transform-origin: left top;
+            -ms-transform-origin: left top;
+            -o-transform-origin: left top;
+            transform-origin: left top;
+        }
+        .origin2 .rose { /* 오른쪽 윗부분을 기준으로 변형 */
+            -webkit-transform-origin: right top;
+            -moz-transform-origin: right top;
+            -ms-transform-origin: right top;
+            -o-transform-origin: right top;
+            transform-origin: right top;
+        }
+        .origin3 .rose { /* 왼쪽 아랫부분을 기준으로 변형 */
+            -webkit-transform-origin: left bottom;
+            -moz-transform-origin: left bottom;
+            -ms-transform-origin: left bottom;
+            -o-transform-origin: left bottom;
+            transform-origin: left bottom;
+        }
+        .origin4 .rose { /* 오른쪽 아랫부분을 기준으로 변형 */
+            -webkit-transform-origin: right bottom;
+            -moz-transform-origin: right bottom;
+            -ms-transform-origin: right bottom;
+            -o-transform-origin: right bottom;
+            transform-origin: right bottom;
+        }
+        .perspect { /* 원근감을 확인하기 위한 구분 기준선 */
+            border: black 2px solid;
+            width: 152px;
+            height: 180px;
+            margin: 20px 25px;
+            display: inline-block;
+        }
+        .sun { /* 이미지가 x축 기준으로 회전하도록 설정 */
+            -webkit-transform: rotateX(50deg);
+            -moz-transform: rotateX(50deg);
+            -ms-transform: rotateX(50deg);
+            -o-transform: rotateX(50deg);
+            transform: rotateX(50deg);
+        }
+        .perspect1 { /* 원근감을 넣기 위해 지정 */
+            -webkit-perspective: 300px;
+            -moz-perspective: 300px;
+            -ms-perspective: 300px;
+            -o-perspective: 300px;
+            perspective: 300px;
+        }
+        .trans { /* 3D 변형 구분을 위한 기준선 */
+            width: 200px;
+            height: 200px;
+            border: solid 2px black;
+            perspective: 300px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: 100px;
+            display: inline-block;
+        }
+        .trans1 { /* y축을 기준으로 회전 */
+            width: 200px;
+            height: 200px;
+            background:#82cbd8;
+			-webkit-transform:rotateY(45deg);
+			-moz-transform:rotateY(45deg);
+			-o-transform:rotateY(45deg);
+			-ms-transform:rotateY(45deg);
+			transform: rotateY(45deg);
+        }
+        .trans2 { /* 왼쪽 윗부분 꼭지점을 기준으로 x축으로 회전 */
+            width: 200px;
+            height: 200px;
+            background: #0d6097;
+			-webkit-transform-origin: left top;
+			-moz-transform-origin: left top;
+			-ms-transform-origin: left top;
+			-o-transform-origin: left top;
+			transform-origin: left top;
+			-webkit-transform: rotateX(45deg);
+			-moz-transform: rotateX(45deg);
+			-ms-transform: rotateX(45deg);
+			-o-transform: rotateX(45deg);
+			transform: rotateX(45deg);
+        }
+        #trans-1 { transform-style: flat;} /* 하위 요소 평면으로 처리 */
+        #trans-2 { transform-style: preserve-3d;} /* 하위 요소 3D로 처리 */
+        .backfaces { /* 도형의 이동 방향 파악 위한 기준선 */
+            width: 200px;
+            height: 200px;
+            border: solid 2px black;
+            perspective: 300px;
+            margin-top: 30px;
+            margin-bottom: 60px;
+            margin-left: 100px;
+            display: inline-block;
+        }
+        .visibility1 { /* y축을 기준으로 회전 */
+            width: 200px;
+            height: 200px;
+            background:#82cbd8;
+			-webkit-transform:rotateY(135deg);
+			-moz-transform:rotateY(135deg);
+			-o-transform:rotateY(135deg);
+			-ms-transform:rotateY(135deg);
+			transform: rotateY(135deg);
+        }
+        #visibility-1 { /* 뒷면 숨기기 */
+            backface-visibility: hidden;
+        }
+        #visibility-2 { /* 뒷면 보이기 */
+            backface-visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <h3>요소의 뒷면 표시하지 않음/표시</h3>
+    <div class="backfaces">
+        <div class="visibility1" id="visibility-1">
+            <h1>BACK</h1>
+        </div>
+    </div>
+    <div class="backfaces">
+        <div class="visibility1" id="visibility-2">
+            <h1>BACK</h1>
+        </div>
+    </div>
+    <br>
+    <h3>3D 변형을 적용/적용하지 않음</h3>
+    <div class="trans">
+        <div class="trans1" id="trans-1">
+            <div class="trans2"></div>
+        </div>
+    </div>
+    <div class="trans">
+        <div class="trans1" id="trans-2">
+            <div class="trans2"></div>
+        </div>
+    </div>
+    <br>
+    <h3>이미지 회전하여 원근감 주기</h3>
+    <div class="perspect"> <!--원본 사진-->
+        <div><img src="images/sunset.jpg"></div>
+    </div>
+    <div class="perspect"> <!--원근감 없음-->
+        <div><img src="images/sunset.jpg" class="sun"></div>
+    </div>
+    <div class="perspect"> <!--원근감 설정-->
+        <div class="perspect1"><img src="images/sunset.jpg" class="sun"></div>
+    </div>
+    <br>
+    <h3>이미지 변형 시작점 다양하게 지정하기</h3>
+    <div class="origins">
+        <div class="origin1"><img src="images/rose.jpg" class="rose"></div>
+    </div>
+    <div class="origins">
+        <div class="origin2"><img src="images/rose.jpg" class="rose"></div>
+    </div>
+    <div class="origins">
+        <div class="origin3"><img src="images/rose.jpg" class="rose"></div>
+    </div>
+    <div class="origins">
+        <div class="origin4"><img src="images/rose.jpg" class="rose"></div>
+    </div>
+</body>
+</html>
