@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition-duration</title>
+    <style>
+        .trduration2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: black 2px solid;
+            text-align: center;
+            -webkit-transition-property: background-color, transform, width, height;
+            -moz-transition-property: background-color, transform, width, height;
+            -o-transition-property: background-color, transform, width, height;
+            transition-property: background-color, transform, width, height;
+            -webkit-transition-duration: 2s, 3s;
+		    -moz-transition-duration: 2s, 3s;
+		    -o-transition-duration: 2s, 3s;
+            transition-duration: 2s 3s; /* 트랜지션 적용대상 번갈아가며 적용 */
+        }
+        .trduration2:hover {
+            background-color: pink; /* 2초 걸쳐 트랜지션 */
+            -webkit-transform: rotate(180deg);
+		    -moz-transform: rotate(180deg);
+		    -o-transform: rotate(180deg);
+		    -ms-transform: rotate(180deg);
+            transform: rotate(180deg); /* 3초 걸쳐 트랜지션 */
+            width: 200px; /* 2초 걸쳐 트랜지션 */
+            height: 200px; /* 3초 걸쳐 트랜지션 */
+        }
+    </style>
+</head>
+<body>
+    <h3>정해진 시간 동안 배경 색과 회전, 높이, 너비 바꾸기</h3>
+    <div class="trduration2"><h1>도형</h1></div>
+</body>
+</html>
