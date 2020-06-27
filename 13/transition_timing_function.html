@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition-timing-function</title>
+    <style>
+        #tfunction div{
+            float: left;
+            width: 100px;
+            height: 50px;
+            margin: 5px 10px;
+            padding: 5px;
+            color: white;
+            background-color: rgb(160, 80, 120);
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        #tfunction:hover div {height: 400px;}
+        #tfunction .linear1 {
+            -webkit-transition: 3s linear;
+            -moz-transition: 3s linear;
+            -o-transition: 3s linear;
+            transition: 3s linear;
+        }
+        #tfunction .ease1 {
+            -webkit-transition: 3s ease;
+            -moz-transition: 3s ease;
+            -o-transition: 3s ease;
+            transition: 3s ease;
+        }
+        #tfunction .ease-in1 {
+            -webkit-transition: 3s ease-in;
+            -moz-transition: 3s ease-in;
+            -o-transition: 3s ease-in;
+            transition: 3s ease-in;
+        }
+        #tfunction .ease-out1 {
+            -webkit-transition: 3s ease-out;
+            -moz-transition: 3s ease-out;
+            -o-transition: 3s ease-out;
+            transition: 3s ease-out;
+        }
+        #tfunction .ease-in-out1 {
+            -webkit-transition: 3s ease-in-out;
+            -moz-transition: 3s ease-in-out;
+            -o-transition: 3s ease-in-out;
+            transition: 3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h3>트랜지션 속도 곡선 속성값</h3>
+    <div id="tfunction">
+        <div class="linear1">linear</div>
+        <div class="ease1">ease</div>
+        <div class="ease-in1">ease-in</div>
+        <div class="ease-out1">ease-out</div>
+        <div class="ease-in-out1">ease-in-out</div>
+    </div>
+</body>
+</html>
