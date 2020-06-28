@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@keyframes</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 2px black solid;
+            -webkit-animation-name: change-bg;
+            -moz-animation-name: change-bg;
+            -o-animation-name: change-bg;
+            animation-name: change-bg;
+            -webkit-animation-duration: 3s;
+            -moz-animation-duration: 3s;
+            -o-animation-duration: 3s;
+            animation-duration: 3s;
+        }
+        @-webkit-keyframes change-bg {
+            from {
+                background-color: blue;
+            }
+            to {
+                background-color: cornflowerblue;
+                border-radius: 50%;
+            }
+        }
+        @-moz-keyframes change-bg {
+            from {
+                background-color: blue;
+            }
+            to {
+                background-color: cornflowerblue;
+                border-radius: 50%;
+            }
+        }
+        @-o-keyframes change-bg {
+            from {
+                background-color: blue;
+            }
+            to {
+                background-color: cornflowerblue;
+                border-radius: 50%;
+            }
+        }
+        @keyframes change-bg {
+            from { /* 애니메이션 시작 시점 */
+                background-color: blue;
+            }
+            to { /* 애니메이션 끝 시점 */
+                background-color: cornflowerblue;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h3>사각형에서 원으로 서서히 바뀌는 애니메이션</h3>
+    <div></div>
+</body>
+</html>
