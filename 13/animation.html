@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 70px;
+            -webkit-animation: rotate 1.5s infinite, background 1.5s infinite alternate;
+            -moz-animation: rotate 1.5s infinite, background 1.5s infinite alternate;
+            -o-animation: rotate 1.5s infinite, background 1.5s infinite alternate;
+            animation: rotate 1.5s infinite, background 1.5s infinite alternate;
+        }
+        @-webkit-keyframes rotate {
+            from {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+            }
+            to {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+            }
+        }
+        @-moz-keyframes rotate {
+            from {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+            }
+            to {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+            }
+        }
+        @-o-keyframes rotate {
+            from {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+            }
+            to {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+            }
+        }
+        @keyframes rotate {
+            from {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+            }
+            to {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+            }
+        }
+        @-webkit-keyframes background {
+            from { background: red;}
+            50% {background: green;}
+            to {background: blue;}
+        }
+        @-moz-keyframes background {
+            from { background: red;}
+            50% {background: green;}
+            to {background: blue;}
+        }
+        @-o-keyframes background {
+            from { background: red;}
+            50% {background: green;}
+            to {background: blue;}
+        }
+        @keyframes background {
+            from { background: red;}
+            50% {background: green;}
+            to {background: blue;}
+        }
+    </style>
+</head>
+<body>
+    <h3>두 개 이상의 애니메이션 동시에 실행하기</h3>
+    <div class="box"></div>
+</body>
+</html>
