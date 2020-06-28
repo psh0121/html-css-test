@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation-name</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: black 2px solid;
+            float: left;
+            margin: 35px;
+        }
+        #box1 {
+            background-color: greenyellow;
+            -webkit-animation-name: shape;
+            -moz-animation-name: shape;
+            -o-animation-name: shape;
+            animation-name: shape;
+            -webkit-animation-duration: 3s;
+            -moz-animation-duration: 3s;
+            -o-animation-duration: 3s;
+            animation-duration: 3s;
+        }
+        #box2 {
+            background-color: violet;
+            -webkit-animation-name: rotate;
+            -moz-animation-name: rotate;
+            -o-animation-name: rotate;
+            animation-name: rotate;
+            -webkit-animation-duration: 3s;
+            -moz-animation-duration: 3s;
+            -o-animation-duration: 3s;
+            animation-duration: 3s;
+        }
+        @-webkit-keyframes shape {
+            form {border-radius: 0%;}
+            to {border-radius: 50%;}
+        }
+        @-moz-keyframes shape {
+            form {border-radius: 0%;}
+            to {border-radius: 50%;}
+        }
+        @-o-keyframes shape {
+            form {border-radius: 0%;}
+            to {border-radius: 50%;}
+        }
+        @keyframes shape {
+            form {border-radius: 0%;}
+            to {border-radius: 50%;}
+        }
+        @-o-keyframes rotate {
+            form {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+        @-moz-keyframes rotate {
+            form {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+        @-webkit-keyframes rotate {
+            form {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+        @keyframes rotate {
+            form {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h3>@keyframe을 사용해 실행할 애니메이션 지정하기</h3>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>
