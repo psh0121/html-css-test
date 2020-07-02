@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem 단위 사용</title>
+    <style>
+        #wrapper {font-size: 12px;}
+        .header-text {font-size: 2rem;}
+        .fluid-text {font-size: 1.5rem;}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header class="header-text"> <!--루트요소 16px 2em=32px-->
+            <p> 가변 그리드 레이아웃 </p>
+            <p class="fluid-text"> 가변 폰트 </p><!--루트요소 16px 1.5em=24px-->
+        </header>
+    </div>
+</body>
+</html>
