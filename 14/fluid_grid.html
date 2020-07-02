@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가변 그리드 레이아웃</title>
+    <style>
+        #wrapper { /*96%로 너비값*/
+            width: 96%;
+            margin: 0 auto;
+        }
+        header { /*헤더 %로 단위변경*/
+            width: 100%;
+            height: 120px;
+            background-color: skyblue;
+            border-bottom: 2px solid black;
+        }
+        .header-text { /*헤더 글씨 스타일*/
+            font-size: 40px;
+            color: white;
+            text-align: center;
+            line-height: 120px;
+        }
+        .content { /*본문 %로 단위변경*/
+            float: left;
+            width: 62.5%;
+            height: 400px;
+            padding: 1.5625%;
+            background-color: yellow;
+        }
+        .right-side { /*사이드바 %로 단위변경*/
+            float: right;
+            width: 31.25%;
+            height: 400px;
+            padding: 1.5625%;
+            background-color: greenyellow;
+        }
+        footer { /*푸터 %로 단위변경*/
+            clear: both;
+            width: 100%;
+            height: 120px;
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1 class="header-text">가변 그리드 레이아웃</h1>
+        </header>
+        <section class="content">
+            <h4>본문</h4>
+        </section>
+        <aside class="right-side">
+            <h4>사이드바</h4>
+        </aside>
+        <footer>
+            <h4>푸터</h4>
+        </footer>
+    </div>
+</body>
+</html>
