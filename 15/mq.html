@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면 너비에 따라 배경 이미지 바꾸기</title>
+    <style>
+        body { /* 문서의 기본 배경 */
+            background: url(images/bg0.jpg) no-repeat fixed;
+            background-size: cover;
+        }
+        @media screen and (max-width: 1024px) {
+            body { /* 화면너비 1024px 이하일 때 배경 */
+                background: url(images/bg1.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            body { /* 화면너비 768px 이하일 때 배경 */
+                background: url(images/bg2.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+        @media screen and (max-width: 320px) {
+            body { /* 화면너비 320px 이하일 때 배경 */
+                background: url(images/bg3.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
