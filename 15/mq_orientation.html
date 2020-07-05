@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면 회전에 따라 배경 색 바꾸기</title>
+    <style>
+        body { /* 기본 배경색 설정 */
+            background-color: #eee;
+        }
+        @media screen and (orientation: landscape) {
+            body  {background-color: orange;} /*가로모드 일때 오렌지색*/
+        }
+        @media screen and (orientation: portrait) {
+            body {background-color: yellow;} /*세로모드 일때 노란색*/
+        }
+    </style>
+</head>
+<body>
+    <h1>Media Query</h1>
+</body>
+</html>
