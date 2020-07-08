@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 항목 세로로 배치하기</title>
+    <style>
+         #container {
+            display: flex;
+            flex-direction: column;
+            border: black solid 2px;
+        }
+        .box {
+            width: 500px;
+            height: 250px;
+            background-color: lightgray;
+            border: solid black 1px;
+        }
+        h2 { padding: 15px;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="box1" class="box"><h2>1</h2></div> <!--플렉스 항목-->
+        <div id="box2" class="box"><h2>2</h2></div> <!--플렉스 항목-->
+        <div id="box3" class="box"><h2>3</h2></div> <!--플렉스 항목-->
+    </div>
+</body>
+</html>
